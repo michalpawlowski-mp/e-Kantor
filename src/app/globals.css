@@ -1,0 +1,201 @@
+/* ===== RESET ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f172a;
+  color: #f8fafc;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* ===== MAIN CONTAINER ===== */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+
+/* ===== SECTIONS ===== */
+
+.section {
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+/* ===== POPULAR CURRENCIES ===== */
+
+.currency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.currency-card {
+  background: #1e293b;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border 0.2s ease,
+    background 0.2s ease;
+}
+
+.currency-card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  background: #243247;
+}
+
+.currency-card.active {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.currency-code {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.currency-rate {
+  font-size: 1.1rem;
+  color: #60a5fa;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.currency-name {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* ===== CONVERTER ===== */
+
+.converter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.direction-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.direction-buttons button {
+  flex: 1;
+  min-width: 180px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+button.active {
+  background: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* ===== INPUTS ===== */
+
+input,
+select {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: white;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 1rem;
+  outline: none;
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* ===== RESULT ===== */
+
+.result {
+  margin-top: 10px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .section {
+    padding: 22px;
+  }
+
+  .currency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .direction-buttons {
+    flex-direction: column;
+  }
+}
