@@ -1,25 +1,51 @@
 import type { Metadata } from "next";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "e-Kantor",
+  title: {
+    default: "e-Kantor",
+    template: "e-Kantor",
+  },
   description:
-    "Aktualne kursy walut NBP • Błyskawiczny kalkulator • USD, EUR, GBP, CHF i inne",
+    "Aktualne kursy walut NBP i szybki kalkulator walut. Sprawdź kursy USD, EUR, GBP, CHF oraz innych walut.",
   keywords: [
-    "kantor",
+    "e-kantor",
+    "kantor online",
     "kursy walut",
-    "nbp",
+    "NBP",
+    "USD",
+    "EUR",
+    "GBP",
+    "CHF",
+    "PLN",
     "kalkulator walut",
-    "usd",
-    "eur",
-    "gbp",
-    "pln",
+    "przelicznik walut",
   ],
-  authors: [{ name: "Michał Pawłowski" }],
+  authors: [
+    {
+      name: "Michał Pawłowski",
+    },
+  ],
+  creator: "Michał Pawłowski",
   openGraph: {
     title: "e-Kantor - Kursy Walut NBP",
-    description: "Sprawdź aktualne kursy walut i przelicz złotówki",
-    images: [{ url: "./ekantor64.png" }],
+    description:
+      "Sprawdź aktualne kursy walut NBP i przelicz wartości w kilka sekund.",
+    siteName: "e-Kantor",
+    locale: "pl_PL",
+    type: "website",
+    images: [
+      {
+        url: "/ekantor64.png",
+        width: 64,
+        height: 64,
+        alt: "Logo e-Kantor",
+      },
+    ],
+  },
+  icons: {
+    icon: "/ekantor64.png",
   },
 };
 
@@ -30,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
