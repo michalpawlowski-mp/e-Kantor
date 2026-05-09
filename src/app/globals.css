@@ -1,6 +1,6 @@
-/* ===== RESET ===== */
-
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,8 +18,6 @@ body {
     sans-serif;
 }
 
-/* ===== MAIN CONTAINER ===== */
-
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -33,8 +31,6 @@ body {
   margin-bottom: 50px;
   letter-spacing: -1px;
 }
-
-/* ===== SECTIONS ===== */
 
 .section {
   background: #111827;
@@ -50,8 +46,6 @@ body {
   margin-bottom: 24px;
   font-weight: 700;
 }
-
-/* ===== POPULAR CURRENCIES ===== */
 
 .currency-grid {
   display: grid;
@@ -100,8 +94,6 @@ body {
   font-size: 0.95rem;
 }
 
-/* ===== CONVERTER ===== */
-
 .converter {
   display: flex;
   flex-direction: column;
@@ -143,8 +135,6 @@ button.active {
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
 }
 
-/* ===== INPUTS ===== */
-
 input,
 select {
   width: 100%;
@@ -166,8 +156,6 @@ select:focus {
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
 }
 
-/* ===== RESULT ===== */
-
 .result {
   margin-top: 10px;
   background: rgba(34, 197, 94, 0.12);
@@ -179,8 +167,6 @@ select:focus {
   font-weight: 700;
   text-align: center;
 }
-
-/* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
   .title {

@@ -3,10 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: {
-    default: "e-Kantor",
-    template: "e-Kantor",
-  },
+  title: "e-Kantor",
   description:
     "Aktualne kursy walut NBP i szybki kalkulator walut. Sprawdź kursy USD, EUR, GBP, CHF oraz innych walut.",
   keywords: [
@@ -30,8 +27,7 @@ export const metadata: Metadata = {
   creator: "Michał Pawłowski",
   openGraph: {
     title: "e-Kantor - Kursy Walut NBP",
-    description:
-      "Sprawdź aktualne kursy walut NBP i przelicz wartości w kilka sekund.",
+    description: "Sprawdź aktualne kursy walut NBP i przelicz wartości w kilka sekund.",
     siteName: "e-Kantor",
     locale: "pl_PL",
     type: "website",
