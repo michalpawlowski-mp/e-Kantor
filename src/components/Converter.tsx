@@ -1,4 +1,4 @@
-import { Currency } from "@/types/currency";
+import { Currency, Direction } from "@/types/currency";
 import DirectionButtons from "./DirectionButtons";
 
 interface ConverterProps {
@@ -8,8 +8,8 @@ interface ConverterProps {
   currencies: Currency[];
   result: string;
   onConvert: () => void;
-  direction: "PLN_TO_CURRENCY" | "CURRENCY_TO_PLN";
-  setDirection: (direction: "PLN_TO_CURRENCY" | "CURRENCY_TO_PLN") => void;
+  direction: Direction;
+  setDirection: (direction: Direction) => void;
   setSelectedCurrency: (currency: Currency | null) => void;
 }
 

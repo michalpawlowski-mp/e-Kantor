@@ -3,3 +3,5 @@ export interface Currency {
   currency: string;
   mid: number;
 }
+
+export type Direction = "PLN_TO_CURRENCY" | "CURRENCY_TO_PLN";

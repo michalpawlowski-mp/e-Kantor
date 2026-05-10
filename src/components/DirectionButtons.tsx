@@ -1,12 +1,11 @@
+import { Direction } from "@/types/currency";
+
 interface DirectionButtonsProps {
-  direction: "PLN_TO_CURRENCY" | "CURRENCY_TO_PLN";
-  onChange: (direction: "PLN_TO_CURRENCY" | "CURRENCY_TO_PLN") => void;
+  direction: Direction;
+  onChange: (direction: Direction) => void;
 }
 
-export default function DirectionButtons({
-  direction,
-  onChange,
-}: DirectionButtonsProps) {
+export default function DirectionButtons({ direction, onChange }: DirectionButtonsProps) {
   return (
     <div className="direction-buttons">
       <button

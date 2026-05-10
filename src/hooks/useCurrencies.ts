@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
-
 import { fetchCurrencies } from "@/api/nbpApi";
-
 import { Currency } from "@/types/currency";
 
 export function useCurrencies() {
   const [currencies, setCurrencies] = useState<Currency[]>([]);
-
   const [selectedCurrency, setSelectedCurrency] = useState<Currency | null>(null);
-
   const [isLoading, setIsLoading] = useState(true);
-
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -29,7 +24,6 @@ export function useCurrencies() {
         setIsLoading(false);
       }
     }
-
     loadCurrencies();
   }, []);
 
