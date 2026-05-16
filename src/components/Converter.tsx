@@ -1,5 +1,5 @@
 import { Currency, Direction } from "@/types/currency";
-import ConverterPanel from "./ConverterPanel";
+import ConverterPanel from "./ConveretPanel";
 import SwapButton from "./SwapButton";
 
 interface ConverterProps {
@@ -37,7 +37,7 @@ export default function Converter({
       <div className="converter-panels">
         <ConverterPanel
           label="Z WALUTY"
-          showPln={isPlnToCurrency}
+          showPLN={isPlnToCurrency}
           value={amount}
           selectedCurrency={selectedCurrency}
           currencies={currencies}
@@ -47,7 +47,7 @@ export default function Converter({
         <SwapButton onClick={handleSwap} />
         <ConverterPanel
           label="NA WALUTĘ"
-          showPln={!isPlnToCurrency}
+          showPLN={!isPlnToCurrency}
           value={resultValue}
           readOnly
           selectedCurrency={selectedCurrency}

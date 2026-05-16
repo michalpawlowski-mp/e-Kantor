@@ -8,10 +8,31 @@ import { POPULAR_CURRENCIES } from "@/constants/currencies";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  const { currencies, selectedCurrency, setSelectedCurrency } = useCurrencies();
+  const { currencies, selectedCurrency, setSelectedCurrency, isLoading, error } =
+    useCurrencies();
 
   const { amount, setAmount, direction, setDirection, result, convertCurrency } =
     useCurrencyConverter(selectedCurrency);
+
+  if (isLoading) {
+    return (
+      <div className="container">
+        <p style={{ textAlign: "center", color: "#60a5fa", marginTop: "100px" }}>
+          Pobieranie kursów walut...
+        </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container">
+        <p style={{ textAlign: "center", color: "#f87171", marginTop: "100px" }}>
+          {error}
+        </p>
+      </div>
+    );
+  }
 
   const popularCurrencies = currencies.filter((currency) =>
     POPULAR_CURRENCIES.includes(currency.code),
