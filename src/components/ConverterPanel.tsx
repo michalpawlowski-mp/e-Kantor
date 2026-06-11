@@ -1,17 +1,6 @@
-import { Currency } from "@/types/currency";
+import { ConverterPanelProps } from "@/types/currency";
 import CurrencySelect from "./CurrencySelect";
 import BadgePLN from "./BadgePLN";
-
-interface ConverterPanelProps {
-  label: string;
-  showPLN: boolean;
-  value: string;
-  readOnly?: boolean;
-  selectedCurrency: Currency | null;
-  currencies: Currency[];
-  onAmountChange?: (value: string) => void;
-  onCurrencyChange: (currency: Currency | null) => void;
-}
 
 export default function ConverterPanel({
   label,
@@ -26,7 +15,6 @@ export default function ConverterPanel({
   return (
     <div className="converter-panel">
       <div className="panel-label">{label}</div>
-
       {showPLN ? (
         <BadgePLN />
       ) : (
@@ -37,12 +25,17 @@ export default function ConverterPanel({
           onChange={onCurrencyChange}
         />
       )}
-
       <input
         type="number"
         placeholder="0"
         value={value}
+        min="0"
         readOnly={readOnly}
+        onKeyDown={(e) => {
+          if (e.key === "-" || e.key === "e") {
+            e.preventDefault();
+          }
+        }}
         onChange={(e) => onAmountChange?.(e.target.value)}
       />
     </div>

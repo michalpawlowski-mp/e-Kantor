@@ -1,18 +1,6 @@
-import { Currency, Direction } from "@/types/currency";
-import ConverterPanel from "./ConveretPanel";
+import { ConverterProps } from "@/types/currency";
+import ConverterPanel from "./ConverterPanel";
 import SwapButton from "./SwapButton";
-
-interface ConverterProps {
-  amount: string;
-  setAmount: (value: string) => void;
-  selectedCurrency: Currency | null;
-  currencies: Currency[];
-  result: string;
-  onConvert: () => void;
-  direction: Direction;
-  setDirection: (direction: Direction) => void;
-  setSelectedCurrency: (currency: Currency | null) => void;
-}
 
 export default function Converter({
   amount,

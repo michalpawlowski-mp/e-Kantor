@@ -1,10 +1,4 @@
-import { Currency } from "@/types/currency";
-
-interface CurrencyCardProps {
-  currency: Currency;
-  isActive: boolean;
-  onSelect: (currency: Currency) => void;
-}
+import { CurrencyCardProps } from "@/types/currency";
 
 export default function CurrencyCard({
   currency,

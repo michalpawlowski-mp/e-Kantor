@@ -1,11 +1,5 @@
 import CurrencyCard from "./CurrencyCard";
-import { Currency } from "@/types/currency";
-
-interface CurrencyGridProps {
-  currencies: Currency[];
-  selectedCurrency: Currency | null;
-  onSelect: (currency: Currency) => void;
-}
+import { CurrencyGridProps } from "@/types/currency";
 
 export default function CurrencyGrid({
   currencies,

@@ -1,11 +1,4 @@
-import { Currency } from "@/types/currency";
-
-interface CurrencySelectProps {
-  title: string;
-  selectedCurrency: Currency | null;
-  currencies: Currency[];
-  onChange: (currency: Currency | null) => void;
-}
+import { CurrencySelectProps } from "@/types/currency";
 
 export default function CurrencySelect({
   title,

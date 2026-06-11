@@ -42,17 +42,14 @@ export default function Home() {
     <>
       <div className="container">
         <h1 className="title">NBP Konwerter walut</h1>
-
         <div className="section">
           <h2>Popularne Waluty</h2>
-
           <CurrencyGrid
             currencies={popularCurrencies}
             selectedCurrency={selectedCurrency}
             onSelect={setSelectedCurrency}
           />
         </div>
-
         <div className="section">
           <h2>Konwerter</h2>
 
