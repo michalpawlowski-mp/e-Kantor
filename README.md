@@ -13,7 +13,7 @@ Projekt kładzie nacisk na czytelny interfejs, dobrą strukturę kodu TypeScript
 
 ## 🌐 Demo
 
-🔗 [Zobacz na żywo](#)
+🔗 [Zobacz na żywo](https://e-kantor.vercel.app/)
 
 ## 🚀 Uruchamianie projektu
 
