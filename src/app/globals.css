@@ -122,21 +122,10 @@ body {
 .panel-currency-fixed {
   display: flex;
   align-items: center;
-  gap: 8px;
   background: #0f172a;
   border: 1px solid #334155;
-  padding: 5px 15px;
+  padding: 10px 12px;
   border-radius: 10px;
-}
-
-.flag {
-  font-size: 1.1rem;
-}
-
-.currency-code-fixed {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #f1f5f9;
 }
 
 .converter-panel input {

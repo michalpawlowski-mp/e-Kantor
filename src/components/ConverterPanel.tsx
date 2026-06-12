@@ -29,12 +29,12 @@ export default function ConverterPanel({
         type="number"
         placeholder="0"
         value={value}
-        min="0"
         readOnly={readOnly}
-        onKeyDown={(e) => {
-          if (e.key === "-" || e.key === "e") {
-            e.preventDefault();
-          }
+        min="0"
+        onKeyDown={(e) => e.key === "-" && e.preventDefault()}
+        onPaste={(e) => {
+          const pasted = e.clipboardData.getData("text");
+          if (pasted.includes("-")) e.preventDefault();
         }}
         onChange={(e) => onAmountChange?.(e.target.value)}
       />

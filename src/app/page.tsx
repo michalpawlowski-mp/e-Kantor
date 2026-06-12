@@ -11,8 +11,15 @@ export default function Home() {
   const { currencies, selectedCurrency, setSelectedCurrency, isLoading, error } =
     useCurrencies();
 
-  const { amount, setAmount, direction, setDirection, result, convertCurrency } =
-    useCurrencyConverter(selectedCurrency);
+  const {
+    amount,
+    setAmount,
+    direction,
+    setDirection,
+    resultValue,
+    error: converterError,
+    convertCurrency,
+  } = useCurrencyConverter(selectedCurrency);
 
   if (isLoading) {
     return (
@@ -52,13 +59,13 @@ export default function Home() {
         </div>
         <div className="section">
           <h2>Konwerter</h2>
-
           <Converter
             amount={amount}
             setAmount={setAmount}
             selectedCurrency={selectedCurrency}
             currencies={currencies}
-            result={result}
+            result={resultValue}
+            error={converterError}
             onConvert={convertCurrency}
             direction={direction}
             setDirection={setDirection}

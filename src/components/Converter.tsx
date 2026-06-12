@@ -14,7 +14,7 @@ export default function Converter({
   setSelectedCurrency,
 }: ConverterProps) {
   const isPlnToCurrency = direction === "PLN_TO_CURRENCY";
-  const resultValue = result.match(/[\d.,]+(?=\s*(PLN|[A-Z]{3})\s*$)/)?.[0] || "";
+  const resultValue = result?.match(/[\d.,]+(?=\s*(PLN|[A-Z]{3})\s*$)/)?.[0] || "";
 
   function handleSwap() {
     setDirection(isPlnToCurrency ? "CURRENCY_TO_PLN" : "PLN_TO_CURRENCY");
