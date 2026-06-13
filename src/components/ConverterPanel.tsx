@@ -1,6 +1,5 @@
 import { ConverterPanelProps } from "@/types/currency";
 import CurrencySelect from "./CurrencySelect";
-import BadgePLN from "./BadgePLN";
 
 export default function ConverterPanel({
   label,
@@ -16,7 +15,7 @@ export default function ConverterPanel({
     <div className="converter-panel">
       <div className="panel-label">{label}</div>
       {showPLN ? (
-        <BadgePLN />
+        <div className="panel-currency-fixed">PLN — złoty (Polska)</div>
       ) : (
         <CurrencySelect
           title={`Wybierz walutę — ${label.toLowerCase()}`}
