@@ -14,7 +14,7 @@ export default function Converter({
   setSelectedCurrency,
 }: ConverterProps) {
   const isPlnToCurrency = direction === "PLN_TO_CURRENCY";
-  const resultValue = result?.match(/[\d.,]+(?=\s*(PLN|[A-Z]{3})\s*$)/)?.[0] || "";
+  const resultValue = result?.toFixed(2) ?? "";
 
   function handleSwap() {
     setDirection(isPlnToCurrency ? "CURRENCY_TO_PLN" : "PLN_TO_CURRENCY");
@@ -46,7 +46,18 @@ export default function Converter({
       <button type="button" className="convert-btn" onClick={onConvert}>
         Przelicz
       </button>
-      {result && <div className="result">{result}</div>}
+      {result && selectedCurrency && (
+        <div className="result">
+          <div className="result-main">
+            {isPlnToCurrency
+              ? `${amount} PLN = ${result.toFixed(2)} ${selectedCurrency.code}`
+              : `${amount} ${selectedCurrency.code} = ${result.toFixed(2)} PLN`}
+          </div>
+          <div className="result-rate">
+            1 {selectedCurrency.code} = {selectedCurrency.mid.toFixed(4)} PLN
+          </div>
+        </div>
+      )}
     </div>
   );
 }

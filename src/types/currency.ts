@@ -41,7 +41,8 @@ export interface ConverterProps {
   setAmount: (value: string) => void;
   selectedCurrency: Currency | null;
   currencies: Currency[];
-  result: string;
+  result: number | null;
+  error: string | null;
   onConvert: () => void;
   direction: Direction;
   setDirection: (direction: Direction) => void;
