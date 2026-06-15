@@ -10,13 +10,8 @@ import ErrorState from "@/components/ErrorState";
 import LoadingState from "@/components/LoadingState";
 
 export default function Home() {
-  const {
-    currencies,
-    selectedCurrency,
-    setSelectedCurrency,
-    isLoading,
-    error,
-  } = useCurrencies();
+  const { currencies, selectedCurrency, setSelectedCurrency, isLoading, error } =
+    useCurrencies();
 
   const {
     amount,
@@ -38,7 +33,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="container">
+      <main>
         <h1 className="title">NBP Konwerter walut</h1>
         <div className="section">
           <h2>Popularne Waluty</h2>
@@ -63,7 +58,7 @@ export default function Home() {
             setSelectedCurrency={setSelectedCurrency}
           />
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );

@@ -1,5 +1,6 @@
 import { ConverterProps } from "@/types/currency";
 import ConverterPanel from "./ConverterPanel";
+import SwapButton from "./SwapButton";
 
 export default function Converter({
   amount,
@@ -15,7 +16,7 @@ export default function Converter({
   const isPlnToCurrency = direction === "PLN_TO_CURRENCY";
   const resultValue = result?.toFixed(2) ?? "";
 
-  function handleSwap(): void {
+  function handleSwap() {
     setDirection(isPlnToCurrency ? "CURRENCY_TO_PLN" : "PLN_TO_CURRENCY");
   }
 
@@ -31,14 +32,7 @@ export default function Converter({
           onAmountChange={setAmount}
           onCurrencyChange={setSelectedCurrency}
         />
-        <button
-          type="button"
-          className="swap-btn"
-          onClick={handleSwap}
-          aria-label="Odwróć przewalutowanie"
-        >
-          ⇄
-        </button>
+        <SwapButton onClick={handleSwap} />
         <ConverterPanel
           label="NA WALUTĘ"
           showPLN={!isPlnToCurrency}

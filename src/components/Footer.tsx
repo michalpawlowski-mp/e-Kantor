@@ -3,7 +3,12 @@ const Footer = () => {
     <footer>
       <p>
         Kursy walut pochodzą z
-        <a href="https://api.nbp.pl" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://api.nbp.pl"
+          className="nbp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Narodowego Banku Polskiego
         </a>
         i są odświeżane raz na dobę.
