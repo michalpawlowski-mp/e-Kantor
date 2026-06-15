@@ -34,16 +34,16 @@ export default function Home() {
   return (
     <>
       <main>
-        <h1 className="title">NBP Konwerter walut</h1>
-        <div className="section">
+        <h1>NBP Konwerter walut</h1>
+        <section>
           <h2>Popularne Waluty</h2>
           <CurrencyGrid
             currencies={popularCurrencies}
             selectedCurrency={selectedCurrency}
             onSelect={setSelectedCurrency}
           />
-        </div>
-        <div className="section">
+        </section>
+        <section>
           <h2>Konwerter</h2>
           <Converter
             amount={amount}
@@ -57,7 +57,7 @@ export default function Home() {
             setDirection={setDirection}
             setSelectedCurrency={setSelectedCurrency}
           />
-        </div>
+        </section>
       </main>
       <Footer />
     </>
