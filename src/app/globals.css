@@ -4,24 +4,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   background: #0f172a;
   color: #f8fafc;
-  width: 100vw;
-  height: 100vh;
-  overflow-y: hidden;
-}
-
-::-webkit-scrollbar {
-  overflow: hidden;
 }
 
 main {
   width: 100%;
   margin: 0 auto;
-  padding: 30px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,40 +27,41 @@ main {
 
 h1 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  margin-bottom: 35px;
+  margin: 25px 0;
 }
 
 section {
   background: #111827;
   border: 1px solid #1e293b;
   border-radius: 24px;
-  padding: 30px;
+  padding: 20px;
   width: 100%;
   max-width: 1100px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 
 section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 24px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
   font-weight: 700;
+  text-align: center;
 }
 
 .currency-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .currency-card {
   background: #1e293b;
   border: 1px solid transparent;
-  border-radius: 20px;
+  border-radius: 16px;
   color: white;
-  padding: 20px;
+  padding: 14px;
   cursor: pointer;
   transition:
     transform 0.2s ease,
@@ -82,21 +81,24 @@ section h2 {
 }
 
 .currency-code {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .currency-rate {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #60a5fa;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   font-weight: 700;
 }
 
 .currency-name {
   color: #94a3b8;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .converter {
@@ -107,7 +109,7 @@ section h2 {
 
 .converter-panels {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -116,7 +118,7 @@ section h2 {
   background: #1a2235;
   border: 1px solid #253047;
   border-radius: 16px;
-  padding: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -184,6 +186,7 @@ section h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
   cursor: pointer;
   transition:
     background 0.2s,
@@ -196,7 +199,6 @@ section h2 {
   background: #2563eb;
   color: white;
   border-color: #2563eb;
-  transform: rotate(180deg);
 }
 
 .convert-btn {
@@ -227,18 +229,19 @@ section h2 {
   color: #939393;
   border-radius: 16px;
   padding: 15px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   text-align: center;
 }
+
 .result-main {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
 .result-rate {
   margin-top: 5px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color: #5e5e5e;
   opacity: 0.75;
@@ -263,14 +266,14 @@ section h2 {
 
 footer {
   text-align: center;
-  height: 70px;
-  padding: 15px 0px;
+  padding: 15px 10px;
   border-top: 1px solid #1e293b;
   color: #475569;
   font-size: 0.875rem;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  width: 100%;
 }
 
 .nbp {
@@ -288,32 +291,50 @@ footer {
   font-size: 0.8rem;
 }
 
-@media (max-width: 768px) {
-  .title {
+@media (min-width: 600px) {
+  h1 {
     font-size: 2.2rem;
+    margin: 30px 0;
   }
 
-  .section {
-    padding: 22px;
+  section {
+    padding: 24px;
   }
 
   .currency-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
-}
 
-@media (max-width: 600px) {
   .converter-panels {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .swap-btn {
-    align-self: center;
-    transform: rotate(90deg);
+    flex-direction: row;
+    align-items: center;
   }
 
   .swap-btn:hover {
-    transform: rotate(270deg);
+    transform: rotate(180deg);
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+    margin: 35px 0;
+  }
+
+  section {
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+
+  .currency-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .result-main {
+    font-size: 1.2rem;
+  }
+
+  .result-rate {
+    font-size: 0.85rem;
   }
 }
