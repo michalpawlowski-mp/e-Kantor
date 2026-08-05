@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import CurrencyGrid from "@/components/CurrencyGrid";
 import Converter from "@/components/Converter";
 import { useCurrencies } from "@/hooks/useCurrencies";
@@ -8,10 +9,13 @@ import { POPULAR_CURRENCIES } from "@/constants/currencies";
 import Footer from "@/components/Footer";
 import ErrorState from "@/components/ErrorState";
 import LoadingState from "@/components/LoadingState";
+import CurrencyModal from "@/components/CurrencyModal";
 
 export default function Home() {
   const { currencies, selectedCurrency, setSelectedCurrency, isLoading, error } =
     useCurrencies();
+
+  const [showAllCurrencies, setShowAllCurrencies] = useState(false);
 
   const {
     amount,
@@ -41,6 +45,7 @@ export default function Home() {
             currencies={popularCurrencies}
             selectedCurrency={selectedCurrency}
             onSelect={setSelectedCurrency}
+            onShowAll={() => setShowAllCurrencies(true)}
           />
         </section>
         <section>
@@ -60,6 +65,12 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      {showAllCurrencies && (
+        <CurrencyModal
+          currencies={currencies}
+          onClose={() => setShowAllCurrencies(false)}
+        />
+      )}
     </>
   );
 }

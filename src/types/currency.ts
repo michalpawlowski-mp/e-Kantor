@@ -16,6 +16,7 @@ export interface CurrencyGridProps {
   currencies: Currency[];
   selectedCurrency: Currency | null;
   onSelect: (currency: Currency) => void;
+  onShowAll: () => void;
 }
 
 export interface CurrencySelectProps {
