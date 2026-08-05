@@ -176,6 +176,29 @@ section h2 {
   font-size: 0.75rem;
 }
 
+.currency-info-wrapper {
+  position: relative;
+}
+
+.currency-tooltip {
+  display: none;
+  position: absolute;
+  top: 28px;
+  right: 0;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.currency-info-wrapper:hover .currency-tooltip {
+  display: block;
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -484,7 +507,7 @@ footer {
   }
 
   .currency-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .converter-panels {
@@ -509,7 +532,7 @@ footer {
   }
 
   .currency-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
   }
 
   .result-main {

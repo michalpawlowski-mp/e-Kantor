@@ -21,15 +21,18 @@ export default function CurrencyCard({
           )}
           {currency.code}
         </div>
-        <button
-          type="button"
-          className="currency-info-btn"
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        >
-          i
-        </button>
+        <div className="currency-info-wrapper">
+          <button
+            type="button"
+            className="currency-info-btn"
+            onClick={(e) => e.stopPropagation()}
+          >
+            i
+          </button>
+          <div className="currency-tooltip">
+            za 1 {currency.currency} = {currency.mid.toFixed(4)} PLN
+          </div>
+        </div>
       </div>
       <div className="currency-rate">{currency.mid.toFixed(4)} PLN</div>
     </div>
