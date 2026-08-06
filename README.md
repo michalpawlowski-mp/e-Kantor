@@ -16,6 +16,14 @@ Projekt kładzie nacisk na czytelny interfejs, dobrą strukturę kodu TypeScript
 
 🔗 [Zobacz na żywo](https://e-kantor.vercel.app/)
 
+## ✨ Funkcje
+
+- 📊 Aktualne kursy walut z API NBP (tabela A)
+- ⭐ Karty popularnych walut (USD, EUR, GBP, CHF, JPY) z symbolami i tooltipem
+- 📋 Modal z pełną listą 32 walut NBP i wyszukiwarką
+- 🔄 Konwerter walut PLN ↔ waluta z przyciskiem swap
+- 📱 Responsywny design (mobile first)
+
 ## 🚀 Uruchamianie projektu
 
 ### 1️⃣ Klonowanie repozytorium
@@ -28,16 +36,16 @@ cd e-Kantor
 ### 2️⃣ Instalacja zależności
 
 ```bash
-npm install  # lub yarn install
+npm install
 ```
 
 ### 3️⃣ Uruchomienie projektu
 
 ```bash
-npm run dev  # lub yarn dev
+npm run dev
 ```
 
-Aplikacja powinna być dostępna pod adresem `http://localhost:3000/`
+Aplikacja dostępna pod adresem `http://localhost:3000/`
 
 ## 🌐 API
 
@@ -58,4 +66,4 @@ GET https://api.nbp.pl/api/exchangerates/tables/A/?format=json
 
 ---
 
-💡 Stworzony przez [Michał Pawłowski (LinkedIn)](https://www.linkedin.com/in/michalpawlowski-mp/)
+💡 Stworzony przez [Michał Pawłowski](https://www.linkedin.com/in/michalpawlowski-mp/)
