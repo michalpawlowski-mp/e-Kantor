@@ -1,22 +1,29 @@
 import { useState } from "react";
 import { Currency } from "@/types/currency";
 
+type SortOption = "name" | "rate-asc" | "rate-desc";
+
 interface CurrencyModalProps {
   currencies: Currency[];
   onClose: () => void;
 }
 
-export default function CurrencyModal({
-  currencies,
-  onClose,
-}: CurrencyModalProps) {
+export default function CurrencyModal({ currencies, onClose }: CurrencyModalProps) {
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState<SortOption>("name");
 
-  const filtered = currencies.filter(
-    (c) =>
-      c.code.toLowerCase().includes(search.toLowerCase()) ||
-      c.currency.toLowerCase().includes(search.toLowerCase()),
-  );
+  const filtered = currencies
+    .filter(
+      (c) =>
+        c.code.toLowerCase().includes(search.toLowerCase()) ||
+        c.currency.toLowerCase().includes(search.toLowerCase()),
+    )
+    .sort((a, b) => {
+      if (sort === "name") return a.currency.localeCompare(b.currency);
+      if (sort === "rate-asc") return a.mid - b.mid;
+      if (sort === "rate-desc") return b.mid - a.mid;
+      return 0;
+    });
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -36,6 +43,29 @@ export default function CurrencyModal({
             autoFocus
           />
         </div>
+        <div className="modal-sort">
+          <button
+            type="button"
+            className={`modal-sort-btn ${sort === "name" ? "active" : ""}`}
+            onClick={() => setSort("name")}
+          >
+            Nazwa A-Z
+          </button>
+          <button
+            type="button"
+            className={`modal-sort-btn ${sort === "rate-asc" ? "active" : ""}`}
+            onClick={() => setSort("rate-asc")}
+          >
+            Kurs ↑
+          </button>
+          <button
+            type="button"
+            className={`modal-sort-btn ${sort === "rate-desc" ? "active" : ""}`}
+            onClick={() => setSort("rate-desc")}
+          >
+            Kurs ↓
+          </button>
+        </div>
         <div className="modal-list">
           {filtered.length > 0 ? (
             filtered.map((currency) => (
@@ -44,9 +74,7 @@ export default function CurrencyModal({
                   <span className="modal-code">{currency.code}</span>
                   <span className="modal-name">{currency.currency}</span>
                 </div>
-                <span className="modal-rate">
-                  {currency.mid.toFixed(4)} PLN
-                </span>
+                <span className="modal-rate">{currency.mid.toFixed(4)} PLN</span>
               </div>
             ))
           ) : (
