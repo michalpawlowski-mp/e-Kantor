@@ -1,5 +1,5 @@
 import { ConverterProps } from "@/types/currency";
-import ConverterPanel from "./ConverterPanel";
+import ConverterPanel from "../converter/ConverterPanel";
 import SwapButton from "./SwapButton";
 
 export default function Converter({

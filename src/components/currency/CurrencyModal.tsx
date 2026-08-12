@@ -1,12 +1,7 @@
 import { useState } from "react";
-import { Currency } from "@/types/currency";
+import { CurrencyModalProps } from "@/types/currency";
 
 type SortOption = "name" | "rate-asc" | "rate-desc";
-
-interface CurrencyModalProps {
-  currencies: Currency[];
-  onClose: () => void;
-}
 
 export default function CurrencyModal({ currencies, onClose }: CurrencyModalProps) {
   const [search, setSearch] = useState("");

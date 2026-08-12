@@ -1,5 +1,5 @@
 import { ConverterPanelProps } from "@/types/currency";
-import CurrencySelect from "./CurrencySelect";
+import CurrencySelect from "../currency/CurrencySelect";
 
 export default function ConverterPanel({
   label,

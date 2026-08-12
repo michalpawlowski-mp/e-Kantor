@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import CurrencyGrid from "@/components/CurrencyGrid";
-import Converter from "@/components/Converter";
+import CurrencyGrid from "@/components/currency/CurrencyGrid";
+import Converter from "@/components/converter/Converter";
 import { useCurrencies } from "@/hooks/useCurrencies";
 import { useCurrencyConverter } from "@/hooks/useCurrencyConverter";
 import { POPULAR_CURRENCIES } from "@/constants/currencies";
-import Footer from "@/components/Footer";
-import ErrorState from "@/components/ErrorState";
-import LoadingState from "@/components/LoadingState";
-import CurrencyModal from "@/components/CurrencyModal";
+import Footer from "@/components/ui/Footer";
+import ErrorState from "@/components/ui/ErrorState";
+import LoadingState from "@/components/ui/LoadingState";
+import CurrencyModal from "@/components/currency/CurrencyModal";
 
 export default function Home() {
   const { currencies, selectedCurrency, setSelectedCurrency, isLoading, error } =
