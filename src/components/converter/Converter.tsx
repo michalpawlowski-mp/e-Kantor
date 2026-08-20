@@ -1,4 +1,4 @@
-import { ConverterProps } from "@/types/currency";
+import { ConverterProps } from "@/types/converter";
 import ConverterPanel from "../converter/ConverterPanel";
 import SwapButton from "./SwapButton";
 
